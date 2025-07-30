@@ -10,7 +10,7 @@ O classificador foi integrado a uma extensão que coleta e classifica URLs em te
 
 - [Instalação](#instalação)
 - [Teste Mínimo](#uso)
-- [Experimentos](#metricas)
+- [Experimentos](#métricas)
 
 O repositório encontra-se de forma que contém os arquivos Python necessários para reprodução das métricas (metrics.py) e utilização da ferramenta gerada (code_analyze_trafic.py), além de possuir o arquivo de requirements para instalação das bibliotecas necessárias para execução do projeto. O repositório também conta com a pasta "url-collector-extension" que contém a extensão de navegador criada e as pastas que armazenam as bases de dados utilizadas.
 
