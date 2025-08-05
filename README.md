@@ -24,7 +24,7 @@ O repositório encontra-se de forma que contém os arquivos Python necessários 
     - Selo D - Artefatos Disponíveis: Os códigos, juntamente com um arquivo README.md estão disponíveis em um repositório público no GitHub;
     - Selo F - Artefatos Funcionais: Os códigos disponibilizados podem ser executados e os tutoriais de execução se encontram presentes no arquivo README.md;
     - Selo R - Artefatos Reprodutíveis: Os dados fornecidos no artefato são passíveis de reprodução através dos códigos disponibilizados através do repositório do GitHub.
-    - Selo S - Artefatos Sustentáveis: Artfato inteligível e de fácil compreensão.
+    - Selo S - Artefatos Sustentáveis: Artefato inteligível e de fácil compreensão.
 
 ## Informações básicas
 
@@ -218,6 +218,7 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
 
