@@ -53,7 +53,8 @@ memory-profiler
 xgboost
 
 O usuário precisará acessar o terminal, instalar as bibliotecas com o requirements.txt e iniciar a execução do arquivo "code_analyse_trafic.py". Também será necessário importar a extensão de navegador no Google Chrome (ferramenta disponivel apenas para esse navegador) e mantê-la ativa. O passo a passo de instalação descreve como isto poderá ser executado.
-A princípio não foram mapeados requisitos mínimos de software, qualquer que seja a máquina do usuário o mesmo poderá executar a ferramenta.
+
+A princípio não foram mapeados requisitos mínimos de hadware, qualquer que sejam as configurações do usuário o mesmo poderá executar a ferramenta, desde que realize devidamente as instalações aqui indicadas.
 
 ## Dependências
 
@@ -217,5 +218,6 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
