@@ -160,7 +160,7 @@ Para instalar o projeto, siga estes passos:
     Sua extensão já estará funcionando!
 
 
-## Teste Mínimo
+## TesteMínimo
 
 Após a instalação ter sido realizada corretamente, basta apenas ativar a execução do código em Python:
 
@@ -217,4 +217,5 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
