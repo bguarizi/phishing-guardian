@@ -6,11 +6,16 @@ O phishing permanece como uma das ameaças cibernéticas de maior impacto financ
 
 O classificador foi integrado a uma extensão que coleta e classifica URLs em tempo real, alertando o usuário sobre sites maliciosos.
 
+## Preocupações com segurança
+
+Não há preocupações com segurança.
+
 ## Tópicos
 
 - [Instalação](#instalação)
-- [Teste Mínimo](#uso)
-- [Experimentos](#métricas)
+- [Teste Mínimo](#testemínimo)
+- [Experimentos](#experimentos)
+- [Licença](#license)
 
 O repositório encontra-se de forma que contém os arquivos Python necessários para reprodução das métricas (metrics.py) e utilização da ferramenta gerada (code_analyze_trafic.py), além de possuir o arquivo de requirements para instalação das bibliotecas necessárias para execução do projeto. O repositório também conta com a pasta "url-collector-extension" que contém a extensão de navegador criada e as pastas que armazenam as bases de dados utilizadas.
 
@@ -19,6 +24,7 @@ O repositório encontra-se de forma que contém os arquivos Python necessários 
     - Selo D - Artefatos Disponíveis: Os códigos, juntamente com um arquivo README.md estão disponíveis em um repositório público no GitHub;
     - Selo F - Artefatos Funcionais: Os códigos disponibilizados podem ser executados e os tutoriais de execução se encontram presentes no arquivo README.md;
     - Selo R - Artefatos Reprodutíveis: Os dados fornecidos no artefato são passíveis de reprodução através dos códigos disponibilizados através do repositório do GitHub.
+    - Selo S - Artefatos Sustentáveis: Artfato inteligível e de fácil compreensão.
 
 ## Informações básicas
 
@@ -47,6 +53,7 @@ memory-profiler
 xgboost
 
 O usuário precisará acessar o terminal, instalar as bibliotecas com o requirements.txt e iniciar a execução do arquivo "code_analyse_trafic.py". Também será necessário importar a extensão de navegador no Google Chrome (ferramenta disponivel apenas para esse navegador) e mantê-la ativa. O passo a passo de instalação descreve como isto poderá ser executado.
+A princípio não foram mapeados requisitos mínimos de software, qualquer que seja a máquina do usuário o mesmo poderá executar a ferramenta.
 
 ## Dependências
 
@@ -153,7 +160,7 @@ Para instalar o projeto, siga estes passos:
     Sua extensão já estará funcionando!
 
 
-## Uso
+## Teste Mínimo
 
 Após a instalação ter sido realizada corretamente, basta apenas ativar a execução do código em Python:
 
@@ -191,7 +198,7 @@ OBS4.: Caso não tenha sites de phishing para que possa testar, acesse a pasta d
     Na parte de baixo do site você encontrará o "CSV Feed", clique no botão "Go" e realize o download do arquivo csv contendo as URLs classificadas como phishing pela PhishStats.
 
 
-## Métricas
+## Experimentos
 
 Além do código para ser executado, também é disponibilizado o código que mostra os valores finais das métricas do modelo: acurácia, recall, precisão e F1 Score. Além de também mostrar o gráfico de Coeficiente de Correlação.
 
@@ -202,3 +209,12 @@ Além do código para ser executado, também é disponibilizado o código que mo
     ```
 
 2. E selecione a opção desejada.
+
+## LICENSE
+
+Copyright (c) [2025] [bguarizi]
+
+Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
+
+Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
