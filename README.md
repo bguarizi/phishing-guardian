@@ -10,7 +10,7 @@ O classificador foi integrado a uma extensão que coleta e classifica URLs em te
 
 Não há preocupações com segurança.
 
-## Tópicos
+## Estrutura do README.md
 
 - [Instalação](#instalação)
 - [Teste Mínimo](#testemínimo)
@@ -345,6 +345,7 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
 
