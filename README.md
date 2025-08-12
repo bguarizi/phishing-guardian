@@ -15,7 +15,7 @@ Não há preocupações com segurança.
 - [Instalação](#instalação)
 - [Teste Mínimo](#testemínimo)
 - [Experimentos](#experimentos)
-- [Reivindicações](#Reivindicações)
+- [Reivindicações](#reivindicações-reprodução-da-ferramenta)
 - [Licença](#license)
 
 O repositório encontra-se de forma que contém os arquivos Python necessários para reprodução das métricas (metrics.py) e utilização da ferramenta gerada (code_analyze_trafic.py), além de possuir o arquivo de requirements para instalação das bibliotecas necessárias para execução do projeto. O repositório também conta com a pasta "url-collector-extension" que contém a extensão de navegador criada e as pastas que armazenam as bases de dados utilizadas.
@@ -345,6 +345,7 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
 
