@@ -15,6 +15,7 @@ Não há preocupações com segurança.
 - [Instalação](#instalação)
 - [Teste Mínimo](#testemínimo)
 - [Experimentos](#experimentos)
+- [Reivindicações](#Reivindicações)
 - [Licença](#license)
 
 O repositório encontra-se de forma que contém os arquivos Python necessários para reprodução das métricas (metrics.py) e utilização da ferramenta gerada (code_analyze_trafic.py), além de possuir o arquivo de requirements para instalação das bibliotecas necessárias para execução do projeto. O repositório também conta com a pasta "url-collector-extension" que contém a extensão de navegador criada e as pastas que armazenam as bases de dados utilizadas.
@@ -211,6 +212,132 @@ Além do código para ser executado, também é disponibilizado o código que mo
 
 2. E selecione a opção desejada.
 
+
+Uma vez que a reprodução do presente artefato não demanda de muito tempo para execução, sendo necessário no máximo 1 hora para instalação e execução da ferramenta, as reinvindicações aqui apresentadas envolvem todo o processo de execução da ferramenta e reprodução das métricas demonstradas no artigo.
+
+## Reivindicações #Reprodução da Ferramenta
+
+Para instalar o projeto, siga estes passos:
+
+1. Garanta que você possui o Python instalado em sua máquina:
+
+    Abra o terminal e digite: 
+
+    ```bash
+    python --version
+    ```
+
+    Caso seja retornada a versão do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
+
+    - Windows ou MacOs:
+
+    Acesse o site oficial:
+
+    ```bash
+    https://www.python.org/downloads/
+    ```
+    E clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
+
+    - Linux:
+
+    Acesse o site oficial e veja qual é a versão atual disponível do Python:
+
+    ```bash
+    https://www.python.org/downloads/
+    ```
+
+    Atualmente a versão mais recente é a 3.12.4.
+    Em seguida, digite o seguinte comando no terminal:
+
+    ```bash
+    sudo apt-get install python3.12
+    ```
+
+    Troque o '3.12' pela versão mais atualizada.
+
+    Refaça o passo inicial para verificar a versão instalada e garantir que a instalação ocorreu corretamente.
+
+2. Clone o repositório através do comando:
+
+    ```bash
+    git clone https://github.com/bguarizi/phishing-guardian.git
+    ```
+
+    Acesse o repositório baixado:
+
+    ```bash
+    cd phishing-guardian/
+    ```
+
+3. Faça a instalação das bibliotecas necessárias:
+
+   Instale o arquivo requirement.txt através do pip com o seguinte comando:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Faça download do Google Chrome:
+
+    Caso ainda não possua o navegador instalado, siga os passos a seguir para realizar a instalação:
+
+    Acesse o site oficial:
+
+    ```bash
+    https://www.google.com/chrome/
+    ```
+
+    Escolha o seu sistema operacional e siga os passos de instalação disponibilizados pelo site.
+
+5. Adicione a extensão ao seu navegador Google Chrome:
+
+    Abra seu navegador e acesse:
+
+    ```bash
+    chrome://extensions/
+    ```
+
+    Clique para ativar o modo desenvolvedor no canto superior direito
+    Clique no botão "Carregar sem compactação" e vá até o caminho da pasta que acabou de clonar do projeto.
+    Selecione a pasta "url-collector-extension" e clique em "Abrir".
+
+    Sua extensão já estará funcionando!
+
+Após a instalação ter sido realizada corretamente, basta apenas ativar a execução do código em Python:
+
+1. Abra novamente o terminal na pasta do projeto que foi baixado:
+
+    Após estar na pasta em questão, rode o seguinte comando:
+
+    ```bash
+    python code_analyse_trafic.py
+    ```
+
+    Aguarde até que a tela mostre que o servidor está ativo na porta 5000.
+
+3. Teste seu navegador:
+
+    Abra o Google Chrome e começe a navegar. 
+    Serão emitidos alertas em tempo real sobre as páginas que estão sendo acessadas.
+
+OBS1.: Os alertas podem demorar alguns segundos para serem emitidos.
+
+OBS2.: A cada site acessado, um alerta será emitido e este sumirá sozinho após alguns segundos.
+
+OBS3: Caso queira desativar os alertas emitidos, basta cancelar a execução do script no terminal e desativar a extensão do navegador acessando novamente "chrome://extensions/" e desativando ou excluindo a extensão.
+
+## Reivindicações #Reprodução das Métricas
+
+É disponibilizado o código que mostra os valores finais das métricas do modelo: acurácia, recall, precisão e F1 Score. Além de também mostrar o gráfico de Coeficiente de Correlação.
+
+1. Para executá-lo, acesse no terminal a pasta do projeto e digite o seguinte comando:
+
+    ```bash
+    python metrics.py
+    ```
+
+2. E selecione a opção desejada.
+
 ## LICENSE
 
 Copyright (c) [2025] [bguarizi]
@@ -218,6 +345,7 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
 
