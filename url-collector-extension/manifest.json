@@ -21,7 +21,7 @@
             "css": ["styles.css"]
         }
     ],
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": {
             "16": "iconbit.png",
@@ -35,4 +35,5 @@
         "128": "iconbit.png"
     }
 }
+
 
