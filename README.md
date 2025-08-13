@@ -330,7 +330,67 @@ OBS3: Caso queira desativar os alertas emitidos, basta cancelar a execução do 
 
 É disponibilizado o código que mostra os valores finais das métricas do modelo: acurácia, recall, precisão e F1 Score. Além de também mostrar o gráfico de Coeficiente de Correlação.
 
-1. Para executá-lo, acesse no terminal a pasta do projeto e digite o seguinte comando:
+Para instalar o projeto, siga estes passos: (Caso já tenha feito anteriormente pule para o passo 4)
+
+1. Garanta que você possui o Python instalado em sua máquina:
+
+    Abra o terminal e digite: 
+
+    ```bash
+    python --version
+    ```
+
+    Caso seja retornada a versão do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
+
+    - Windows ou MacOs:
+
+    Acesse o site oficial:
+
+    ```bash
+    https://www.python.org/downloads/
+    ```
+    E clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
+
+    - Linux:
+
+    Acesse o site oficial e veja qual é a versão atual disponível do Python:
+
+    ```bash
+    https://www.python.org/downloads/
+    ```
+
+    Atualmente a versão mais recente é a 3.12.4.
+    Em seguida, digite o seguinte comando no terminal:
+
+    ```bash
+    sudo apt-get install python3.12
+    ```
+
+    Troque o '3.12' pela versão mais atualizada.
+
+    Refaça o passo inicial para verificar a versão instalada e garantir que a instalação ocorreu corretamente.
+
+2. Clone o repositório através do comando:
+
+    ```bash
+    git clone https://github.com/bguarizi/phishing-guardian.git
+    ```
+
+    Acesse o repositório baixado:
+
+    ```bash
+    cd phishing-guardian/
+    ```
+
+3. Faça a instalação das bibliotecas necessárias:
+
+   Instale o arquivo requirement.txt através do pip com o seguinte comando:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Para executar a visualização das métricas, acesse no terminal a pasta do projeto e digite o seguinte comando:
 
     ```bash
     python metrics.py
@@ -345,6 +405,7 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
 
