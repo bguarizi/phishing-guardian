@@ -130,6 +130,8 @@ while True:
         plt.xlabel('Variáveis de Entrada')
         plt.title('Coeficiente de Correlação entre variáveis de entrada a as classes de saída')
         plt.show() 
+        plt.savefig("grafico_correlacao.png", dpi=300, bbox_inches='tight')
+        print("Caso a visualização não ocorra diretamente na tela, o gráfico foi salvo na pasta do projeto nomeado como 'grafico_correlacao.png' para que possa ser acessado.")
     elif opcao == "5":
         print("\nSaindo do programa...")
         break
