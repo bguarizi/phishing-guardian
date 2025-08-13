@@ -70,7 +70,8 @@ function sendUrlToServer(url) {
     })
     .catch(error => {
         // console.error('Erro ao enviar URL:', error);
-        mostrarAlerta("ERRO DE COMUNICAÇÃO!\nVerifique se o software está executando corretamente.\nCaso não queira mais receber este alerta, desative a extensão nas configurações do navegador.");
-        // alert("ERRO DE COMUNICAÇÃO!\nVerifique se o software está executando corretamente.\nCaso não queira mais receber este alerta, desative a extensão nas configurações do navegador.");
+        //mostrarAlerta("ERRO DE COMUNICAÇÃO!\nVerifique se o software está executando corretamente.\nCaso não queira mais receber este alerta, desative a extensão nas configurações do navegador.");
+        alert("ERRO DE COMUNICAÇÃO!\nVerifique se o software está executando corretamente.\nCaso não queira mais receber este alerta, desative a extensão nas configurações do navegador.");
     });
 }
+
