@@ -11,8 +11,10 @@ O classificador foi integrado a uma extensão que coleta e classifica URLs em te
 Os ambientes de teste utilizados consistiram em máquinas virtuais geradas no VirtualBox com as seguintes configurações:
 
 - Ubuntu 24.04.2 LTS - 4GB RAM - 2 núcleos de processador.
-- Windows 10 - 8GB RAM - 2 núcleos de processador.
-- Windows 11 - 8GB RAM - 2 núcleos de processador.
+- Windows 10 - 4GB RAM - 2 núcleos de processador.
+- Windows 11 - 4GB RAM - 2 núcleos de processador.
+
+* Para esses ambientes o único foco foi a execução da ferramenta e realização de buscas de páginas web simples pelo navegador.
 
 ## Preocupações com segurança
 
@@ -88,39 +90,32 @@ Para instalar o projeto, siga estes passos:
 
 1. Garanta que você possui o Python instalado em sua máquina:
 
+    Durante os testes, foram obtidos problemas com a versão 3.13 do Python para execução da ferramenta, sendo assim, recomenda-se a utilização da versão 3.12.
+
     Abra o terminal e digite: 
 
     ```bash
-    python --version
+    python3.12 --version
     ```
 
-    Caso seja retornada a versão do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
+    Caso seja retornada a versão 3.12 do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
 
-    - Windows ou MacOs:
+    - Windows:
 
     Acesse o site oficial:
 
     ```bash
     https://www.python.org/downloads/
     ```
-    E clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
+    Busque pela versão 3.12 e clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
 
     - Linux:
 
-    Acesse o site oficial e veja qual é a versão atual disponível do Python:
-
-    ```bash
-    https://www.python.org/downloads/
-    ```
-
-    Atualmente a versão mais recente é a 3.12.4.
-    Em seguida, digite o seguinte comando no terminal:
+    Digite o seguinte comando no terminal:
 
     ```bash
     sudo apt-get install python3.12
     ```
-
-    Troque o '3.12' pela versão mais atualizada.
 
     Refaça o passo inicial para verificar a versão instalada e garantir que a instalação ocorreu corretamente.
 
@@ -136,7 +131,25 @@ Para instalar o projeto, siga estes passos:
     cd phishing-guardian/
     ```
 
-3. Faça a instalação das bibliotecas necessárias:
+3. Crie uma venv e ative-a:
+
+    ```bash
+    python3.12 -m venv venv
+    ```
+
+    - Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+    - Windows:
+
+    ```bash
+    .\venv\Scripts\Activate
+    ```
+
+4. Faça a instalação das bibliotecas necessárias:
 
    Instale o arquivo requirement.txt através do pip com o seguinte comando:
 
@@ -144,7 +157,7 @@ Para instalar o projeto, siga estes passos:
     pip install -r requirements.txt
     ```
 
-4. Faça download do Google Chrome:
+5. Faça download do Google Chrome:
 
     Caso ainda não possua o navegador instalado, siga os passos a seguir para realizar a instalação:
 
@@ -156,7 +169,7 @@ Para instalar o projeto, siga estes passos:
 
     Escolha o seu sistema operacional e siga os passos de instalação disponibilizados pelo site.
 
-5. Adicione a extensão ao seu navegador Google Chrome:
+6. Adicione a extensão ao seu navegador Google Chrome:
 
     Abra seu navegador e acesse:
 
@@ -230,39 +243,32 @@ Para instalar o projeto, siga estes passos:
 
 1. Garanta que você possui o Python instalado em sua máquina:
 
+    Durante os testes, foram obtidos problemas com a versão 3.13 do Python para execução da ferramenta, sendo assim, recomenda-se a utilização da versão 3.12.
+
     Abra o terminal e digite: 
 
     ```bash
-    python --version
+    python3.12 --version
     ```
 
-    Caso seja retornada a versão do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
+    Caso seja retornada a versão 3.12 do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
 
-    - Windows ou MacOs:
+    - Windows:
 
     Acesse o site oficial:
 
     ```bash
     https://www.python.org/downloads/
     ```
-    E clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
+    Busque pela versão 3.12 e clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
 
     - Linux:
 
-    Acesse o site oficial e veja qual é a versão atual disponível do Python:
-
-    ```bash
-    https://www.python.org/downloads/
-    ```
-
-    Atualmente a versão mais recente é a 3.12.4.
-    Em seguida, digite o seguinte comando no terminal:
+    Digite o seguinte comando no terminal:
 
     ```bash
     sudo apt-get install python3.12
     ```
-
-    Troque o '3.12' pela versão mais atualizada.
 
     Refaça o passo inicial para verificar a versão instalada e garantir que a instalação ocorreu corretamente.
 
@@ -278,7 +284,25 @@ Para instalar o projeto, siga estes passos:
     cd phishing-guardian/
     ```
 
-3. Faça a instalação das bibliotecas necessárias:
+3. Crie uma venv e ative-a:
+
+    ```bash
+    python3.12 -m venv venv
+    ```
+
+    - Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+    - Windows:
+
+    ```bash
+    .\venv\Scripts\Activate
+    ```
+
+4. Faça a instalação das bibliotecas necessárias:
 
    Instale o arquivo requirement.txt através do pip com o seguinte comando:
 
@@ -286,7 +310,7 @@ Para instalar o projeto, siga estes passos:
     pip install -r requirements.txt
     ```
 
-4. Faça download do Google Chrome:
+5. Faça download do Google Chrome:
 
     Caso ainda não possua o navegador instalado, siga os passos a seguir para realizar a instalação:
 
@@ -298,7 +322,7 @@ Para instalar o projeto, siga estes passos:
 
     Escolha o seu sistema operacional e siga os passos de instalação disponibilizados pelo site.
 
-5. Adicione a extensão ao seu navegador Google Chrome:
+6. Adicione a extensão ao seu navegador Google Chrome:
 
     Abra seu navegador e acesse:
 
@@ -314,7 +338,7 @@ Para instalar o projeto, siga estes passos:
 
 Após a instalação ter sido realizada corretamente, basta apenas ativar a execução do código em Python:
 
-1. Abra novamente o terminal na pasta do projeto que foi baixado:
+7. Abra novamente o terminal na pasta do projeto que foi baixado:
 
     Após estar na pasta em questão, rode o seguinte comando:
 
@@ -324,7 +348,7 @@ Após a instalação ter sido realizada corretamente, basta apenas ativar a exec
 
     Aguarde até que a tela mostre que o servidor está ativo na porta 5000.
 
-3. Teste seu navegador:
+8. Teste seu navegador:
 
     Abra o Google Chrome e começe a navegar. 
     Serão emitidos alertas em tempo real sobre as páginas que estão sendo acessadas.
@@ -339,43 +363,36 @@ OBS3: Caso queira desativar os alertas emitidos, basta cancelar a execução do 
 
 É disponibilizado o código que mostra os valores finais das métricas do modelo: acurácia, recall, precisão e F1 Score. Além de também mostrar o gráfico de Coeficiente de Correlação.
 
-Para instalar o projeto, siga estes passos: (Caso já tenha feito anteriormente pule para o passo 4)
+Para instalar o projeto, siga estes passos: (Caso já tenha feito anteriormente pule para o passo 5)
 
 1. Garanta que você possui o Python instalado em sua máquina:
+
+    Durante os testes, foram obtidos problemas com a versão 3.13 do Python para execução da ferramenta, sendo assim, recomenda-se a utilização da versão 3.12.
 
     Abra o terminal e digite: 
 
     ```bash
-    python --version
+    python3.12 --version
     ```
 
-    Caso seja retornada a versão do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
+    Caso seja retornada a versão 3.12 do Python, está tudo ok. Caso você não tenha instalado ainda, siga os seguintes passos:
 
-    - Windows ou MacOs:
+    - Windows:
 
     Acesse o site oficial:
 
     ```bash
     https://www.python.org/downloads/
     ```
-    E clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
+    Busque pela versão 3.12 e clique no botão para fazer download, depois siga os passos de instalação e volte ao passo inicial para verificar a versão do Python e se certificar de que a instalação foi feita corretamente.
 
     - Linux:
 
-    Acesse o site oficial e veja qual é a versão atual disponível do Python:
-
-    ```bash
-    https://www.python.org/downloads/
-    ```
-
-    Atualmente a versão mais recente é a 3.12.4.
-    Em seguida, digite o seguinte comando no terminal:
+    Digite o seguinte comando no terminal:
 
     ```bash
     sudo apt-get install python3.12
     ```
-
-    Troque o '3.12' pela versão mais atualizada.
 
     Refaça o passo inicial para verificar a versão instalada e garantir que a instalação ocorreu corretamente.
 
@@ -391,7 +408,25 @@ Para instalar o projeto, siga estes passos: (Caso já tenha feito anteriormente 
     cd phishing-guardian/
     ```
 
-3. Faça a instalação das bibliotecas necessárias:
+3. Crie uma venv e ative-a:
+
+    ```bash
+    python3.12 -m venv venv
+    ```
+
+    - Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+    - Windows:
+
+    ```bash
+    .\venv\Scripts\Activate
+    ```
+
+4. Faça a instalação das bibliotecas necessárias:
 
    Instale o arquivo requirement.txt através do pip com o seguinte comando:
 
@@ -399,15 +434,15 @@ Para instalar o projeto, siga estes passos: (Caso já tenha feito anteriormente 
     pip install -r requirements.txt
     ```
 
-4. Para executar a visualização das métricas, acesse no terminal a pasta do projeto e digite o seguinte comando:
+5. Para executar a visualização das métricas, acesse no terminal a pasta do projeto e digite o seguinte comando:
 
     ```bash
     python metrics.py
     ```
 
-2. E selecione a opção desejada.
+6. E selecione a opção desejada.
 
-Os resultados obtidos pela execução desta reinvindicação encontram-se dispostos no artigo desenvolvido.
+Os resultados obtidos pela execução desta reinvindicação encontram-se dispostos no artigo desenvolvido, sendo elas:
 
 Em relação aos resultados das métricas de cada modelo elaborado, seguem a tabela mostrada a seguir:
 
@@ -435,7 +470,7 @@ https://www.domcop.com/openpagerank/auth/signup
 
 3. Copie a chave de API mostrada
 
-4. Acesse o código da ferramenta "code_analyze_trafic" que baixou deste repositório e busque pela linha que contém o seguinte texto: 'API-OPR'.
+4. Acesse o código da ferramenta "code_analyze_trafic.py" que baixou deste repositório e busque pela linha que contém o seguinte texto: 'API-OPR'.
 
 5. Substitua a chave de API contida neste campo pela chave gerada em sua conta do OpenPage Rank.
 
