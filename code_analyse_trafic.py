@@ -10,6 +10,7 @@ import requests
 import whois
 from datetime import date
 from flask import Flask, request, jsonify
+from xgboost import XGBClassifier
 
 print("Iniciando software...")
 
@@ -23,34 +24,23 @@ seed = 100
 
 data = pd.read_csv("./data_bases/data_base.csv")
 
-#x = data[["url_lenght", "is_https", "ip_format", "dot_count", "suspect_char","activate_days","page_rank", "html_input", "certificate", "redirect", "https_text", "caract_hifen", "iframe"]]
+x = data[["url_lenght", "is_https", "ip_format", "dot_count", "suspect_char","activate_days","page_rank", "html_input", "certificate", "redirect", "https_text", "caract_hifen", "iframe"]]
 #Remoção dos atributos: A3, A5 e A10
-x = data[["url_lenght", "is_https", "dot_count","activate_days","page_rank", "html_input", "certificate", "https_text", "caract_hifen", "iframe"]]
+#x = data[["url_lenght", "is_https", "dot_count","activate_days","page_rank", "html_input", "certificate", "https_text", "caract_hifen", "iframe"]]
 y = data["phishing"]
 
 # Dividindo os dados em conjuntos de treino e teste
 X_treino, X_teste, y_treino, y_teste = train_test_split(x, y, train_size=0.85, random_state=seed, shuffle=True, stratify=y)
 
-# Criando o modelo RandomForest
-modelo_rf = RandomForestClassifier(
-       n_estimators=100,  
-       criterion='gini',               
-       min_samples_split=2,   
-       min_samples_leaf=1,     
-       max_features='sqrt',    
-       bootstrap=True,         
-       random_state=seed,
-       min_impurity_decrease=0.00001)
+modelo_xgb = XGBClassifier(n_estimators=100)
 
 # Treinando o modelo
-modelo_rf.fit(X_treino, y_treino)
+modelo_xgb.fit(X_treino, y_treino)
 
-#Função responsável por executar a normalização mim-max dos dados coletados
 def normalize_min_max(val, min, max):
     val = (val-min) / (max - min)
     return val
 
-#Função que coleta o html na página
 def get_html(url):
     try:
         resposta = requests.get(url, timeout=2) # Timeout de 2 segundos, caso haja demora na resposta da página
@@ -64,7 +54,6 @@ def get_html(url):
     except requests.exceptions.RequestException as e:
         return None
 
-#Função que verifica se a url possui formato IP
 def verify_ip_format(string):
     padrao = r'^\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}$' # Define o formato IP como X.X.X.X 
     if re.match(padrao, string): # Analisa se o formato bate com a URL
@@ -72,7 +61,6 @@ def verify_ip_format(string):
     else:
         return False
 
-#Executa acesso ao OpenPage Rank para coleta do page rank do domínio 
 def acess_openpagerank(domains):
     url_pagerank = "https://openpagerank.com/api/v1.0/getPageRank"
     params = {"domains[]": domains}
@@ -144,11 +132,11 @@ def verify_pages(url, html_input, html_iframe, valuePageRank):
 
 
     # Se possui formato de IP ou não
-    # ip = verify_ip_format(domain)
-    # if (ip):
-    #     results.append("1") # 1, se tem formato de IP
-    # else:
-    #     results.append("0") # 0, se não tem formato de IP
+    ip = verify_ip_format(domain)
+    if (ip):
+        results.append("1") # 1, se tem formato de IP
+    else:
+        results.append("0") # 0, se não tem formato de IP
 
     # Quantidade de pontos na string
     count_dot = url.count('.')
@@ -156,10 +144,10 @@ def verify_pages(url, html_input, html_iframe, valuePageRank):
     results.append(str(count_dot))
 
     # Caracter suspeito "@"
-    # if '@' in url:
-    #      results.append("1") # 1, se possui um caracter suspeito
-    # else:
-    #     results.append("0") # 0, se não possui um caracter suspeito
+    if '@' in url:
+         results.append("1") # 1, se possui um caracter suspeito
+    else:
+        results.append("0") # 0, se não possui um caracter suspeito
 
     # Adiciona a flag sobre a existencia da tag input
     results.append(html_input)
@@ -205,10 +193,10 @@ def verify_pages(url, html_input, html_iframe, valuePageRank):
         results.append("0") #Caso não consiga coletar a informação adiciona 0 à lista
 
     #Verifica redirecionamento
-    # if '//' in url_d:
-    #     results.append("1")
-    # else:
-    #     results.append("0")
+    if '//' in url_d:
+        results.append("1")
+    else:
+        results.append("0")
 
     #Verifica como texto na url https
 
@@ -269,7 +257,8 @@ def receive_url():
 
         #Escreve as informações coletadas em um arquivo para poder ler e enviar as informações ao classificador
         with open(file_csv, 'w+') as csvfile:
-            csvfile.write("url,url_lenght,is_https,dot_count,html_input,activate_days,page_rank,certificate,https_text,caract_hifen,iframe\n")
+            csvfile.write("url,url_lenght,is_https,ip_format,dot_count,suspect_char,html_input,activate_days,page_rank,certificate,redirect,https_text,caract_hifen,iframe\n")
+            #csvfile.write("url,url_lenght,is_https,dot_count,html_input,activate_days,page_rank,certificate,https_text,caract_hifen,iframe\n")
             escritor_csv = csv.writer(csvfile)
             escritor_csv.writerow(result)
 
@@ -277,12 +266,12 @@ def receive_url():
         data_intercept = pd.read_csv(file_csv)
 
         # Coleta as informações adquiridas
-        x = data_intercept[["url_lenght", "is_https", "dot_count","activate_days","page_rank", "html_input","certificate", "https_text", "caract_hifen", "iframe"]]
-
+        x = data_intercept[["url_lenght", "is_https", "ip_format", "dot_count", "suspect_char","activate_days","page_rank", "html_input", "certificate", "redirect", "https_text", "caract_hifen", "iframe"]]
+        #x = data_intercept[["url_lenght", "is_https", "dot_count","activate_days","page_rank", "html_input","certificate", "https_text", "caract_hifen", "iframe"]]
         x = x.dropna(axis=1)
 
         # Executa a predição com o modelo (0 = legítimo; 1 = phishing)
-        phish = modelo_rf.predict(x)
+        phish = modelo_xgb.predict(x)
 
         end_time = time.time()
 

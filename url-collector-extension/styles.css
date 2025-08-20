@@ -1,14 +1,17 @@
+body, html {
+    overflow: visible !important;
+}
+
 #custom-mensagem {
-    position: fixed;
-    top: 100px;
-    right: 300px;
-    /* transform: translate(-50%, -50%); */
+    position: fixed !important;
+    top: 100px !important;
+    right: 300px !important;
     background-color: #4CAF50;
     color: white;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10000;
+    z-index: 9999999 !important;
     white-space: pre-wrap;
     font-family: "Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
     font-size: 16px;

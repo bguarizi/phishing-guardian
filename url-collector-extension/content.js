@@ -1,9 +1,3 @@
-// chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-//     if (message.url) {
-//         alert("URL atual: " + message.url);
-//     }
-// });
-
 // Escuta as mensagens enviadas pelo background.js
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.mensagem) {

@@ -2,9 +2,17 @@
 
 Este repositório está vinculado ao artigo submetido ao SBSeg 2025 "Phishing Guardian: Detecção de sites de phishing com Machine Learing". O artigo foi submetido à Trilha Principal da 25º edição do Simpósio Brasileiro em Segurança da Informação e de Sistemas Computacionais.
 
-O phishing permanece como uma das ameaças cibernéticas de maior impacto financeiro e social. Este trabalho investiga a eficácia de técnicas de Machine Learning na detecção de URLs maliciosas, abordando lacunas relacionadas a bases de dados incompletas e comparações sistemáticas entre algoritmos. Utiliza-se uma base de dados de 50.261 URLs (55,5\% maliciosas) coletadas de fontes públicas e varredura ativa. Os algoritmos Random Forest, XGBoost e SVM são treinados com validação cruzada, com o XGBoost alcançando 99,51\% de acurácia. Foi desenvolvida uma ferramenta que contém o classificador e uma extensão de navegador que exibe alertas não intrusivos ao usuário, objetivando garantir uma boa experiência de utilização.
+O phishing permanece como uma das ameaças cibernéticas de maior impacto financeiro e social. Este trabalho investiga a eficácia de técnicas de Machine Learning na detecção de URLs maliciosas, abordando lacunas relacionadas a bases de dados incompletas e comparações sistemáticas entre algoritmos. Utiliza-se uma base de dados de 50.261 URLs (55,5% maliciosas) coletadas de fontes públicas e varredura ativa. Os algoritmos Random Forest, XGBoost e SVM são treinados com validação cruzada, com o XGBoost alcançando 99,51% de acurácia. Foi desenvolvida uma ferramenta que contém o classificador e uma extensão de navegador que exibe alertas não intrusivos ao usuário, objetivando garantir uma boa experiência de utilização.
 
 O classificador foi integrado a uma extensão que coleta e classifica URLs em tempo real, alertando o usuário sobre sites maliciosos.
+
+* É importante destacar que apenas foram realizados testes significativos do uso da ferramenta em sistemas operacionais Windows e Linux, não tendo sido testada em ambientes MacOs, tendo apenas a garantia de funcionamento nos ambientes citados inicialmente.
+
+Os ambientes de teste utilizados consistiram em máquinas virtuais geradas no VirtualBox com as seguintes configurações:
+
+- Ubuntu 24.04.2 LTS - 4GB RAM - 2 núcleos de processador.
+- Windows 10 - 8GB RAM - 2 núcleos de processador.
+- Windows 11 - 8GB RAM - 2 núcleos de processador.
 
 ## Preocupações com segurança
 
@@ -16,6 +24,7 @@ Não há preocupações com segurança.
 - [Teste Mínimo](#testemínimo)
 - [Experimentos](#experimentos)
 - [Reivindicações](#reivindicações-reprodução-da-ferramenta)
+- [Gere sua própria chave de API do OpenPage Rank (Opcional)](#chave_api)
 - [Licença](#license)
 
 O repositório encontra-se de forma que contém os arquivos Python necessários para reprodução das métricas (metrics.py) e utilização da ferramenta gerada (code_analyze_trafic.py), além de possuir o arquivo de requirements para instalação das bibliotecas necessárias para execução do projeto. O repositório também conta com a pasta "url-collector-extension" que contém a extensão de navegador criada e as pastas que armazenam as bases de dados utilizadas.
@@ -397,6 +406,38 @@ Para instalar o projeto, siga estes passos: (Caso já tenha feito anteriormente 
     ```
 
 2. E selecione a opção desejada.
+
+Os resultados obtidos pela execução desta reinvindicação encontram-se dispostos no artigo desenvolvido.
+
+Em relação aos resultados das métricas de cada modelo elaborado, seguem a tabela mostrada a seguir:
+
+![Métricas finais de cada modelo](./img/resultadofinal_algoritmos.png)
+
+Também são apresentados os resultados das métricas dos modelos XGBoost e Random Forest com a remoção dos atributos A3, A5 e A10, sendo demonstradas pela tabela:
+
+![Métricas com a remoção dos atributos](./img/resultadofinal_remocaoatributos.png)
+
+Além de também ser possível reproduzir o coeficiente de correlação demonstrado:
+
+![Coeficiente de Correlação](./img/coeficiente_de_correlacao.png)
+
+## Chave API
+
+Esta seção irá demonstrar como você pode gerar e utilizar sua própria chave de API do OpenPage Rank (solução utilizada para coletar o PageRank das páginas acessadas).
+
+Atualmente o código possui uma chave de API disponibilizada pelos autores para que qualquer usuário possa executar os devidos testes e utilizar a ferramenta sem problemas iniciais. Caso o usuário deseje fazer o uso recorrente desta ferramenta, recomenda-se a criação de uma chave de API própria para consumo de requisições.
+
+1. Acesse a página do OpenPage Rank e crie um acesso próprio para você:
+
+https://www.domcop.com/openpagerank/auth/signup
+
+2. Após fazer login, acesse "API Key" no menu de navegação
+
+3. Copie a chave de API mostrada
+
+4. Acesse o código da ferramenta "code_analyze_trafic" que baixou deste repositório e busque pela linha que contém o seguinte texto: 'API-OPR'.
+
+5. Substitua a chave de API contida neste campo pela chave gerada em sua conta do OpenPage Rank.
 
 ## LICENSE
 

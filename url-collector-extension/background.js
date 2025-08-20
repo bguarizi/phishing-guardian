@@ -1,24 +1,3 @@
-// function mostrarAlerta(mensagem) {
-//     var divAlerta = document.createElement('div');
-//     divAlerta.id = 'erro';
-//     divAlerta.textContent = mensagem;
-//     divAlerta.style.position = 'fixed';
-//     divAlerta.style.top = '10px';
-//     divAlerta.style.left = '50%';
-//     divAlerta.style.transform = 'translateX(-50%)';
-//     divAlerta.style.padding = '10px';
-//     divAlerta.style.background = '#ff9999';
-//     divAlerta.style.border = '1px solid #cc6666';
-//     divAlerta.style.borderRadius = '5px';
-//     divAlerta.style.zIndex = '9999';
-//     divAlerta.style.display = 'block';
-
-//     document.body.appendChild(divAlerta);
-
-//     setTimeout(function() {
-//         divAlerta.style.display = 'none';
-//     }, 3000); // Tempo em milissegundos (3000 = 3 segundos)
-// }
 
 // Função para enviar a mensagem para o content.js
 function sendMessage(mensagem, type) {
@@ -30,13 +9,6 @@ function sendMessage(mensagem, type) {
         }
     });
 }
-
-// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-//     if (changeInfo.status == 'complete') {
-//         var url = tab.url;
-//         sendUrlToServer(url);
-//     }
-// });
 
 chrome.webNavigation.onBeforeNavigate.addListener((details) => {
     if (details.frameId === 0) { // Verifica se é o frame principal (não um iframe)
@@ -60,12 +32,8 @@ function sendUrlToServer(url) {
 
             sendMessage(data.message, data.type);
 
-            // mostrarAlerta(data.message);
-            // alert(data.message);
         } else {
             sendMessage('Resposta do servidor vazia ou inválida.', -1);
-            // mostrarAlerta('Resposta do servidor vazia ou inválida.');
-            // alert("Error");
         }
     })
     .catch(error => {
