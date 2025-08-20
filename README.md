@@ -11,8 +11,8 @@ O classificador foi integrado a uma extensão que coleta e classifica URLs em te
 Os ambientes de teste utilizados consistiram em máquinas virtuais geradas no VirtualBox com as seguintes configurações:
 
 - Ubuntu 24.04.2 LTS - 4GB RAM - 2 núcleos de processador.
-- Windows 10 - 4GB RAM - 2 núcleos de processador.
-- Windows 11 - 4GB RAM - 2 núcleos de processador.
+- Windows 10 - 8GB RAM - 2 núcleos de processador.
+- Windows 11 - 8GB RAM - 2 núcleos de processador.
 
 * Para esses ambientes o único foco foi a execução da ferramenta e realização de buscas de páginas web simples pelo navegador.
 
@@ -481,6 +481,7 @@ Copyright (c) [2025] [bguarizi]
 Este código pode ser livremente utilizado, modificado e distribuído, inclusive para fins comerciais, desde que este aviso de direitos autorais seja mantido.
 
 Este software é fornecido “como está”, sem qualquer garantia, expressa ou implícita, incluindo, sem limitação, garantias de comercialização ou adequação a um propósito específico. Os autores não se responsabilizam por quaisquer danos ou prejuízos decorrentes do uso deste software.
+
 
 
 
